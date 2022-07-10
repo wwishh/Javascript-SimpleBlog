@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+
+    <title>소소하게 편안함과 안정을 주는 나의 블로그</title>
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+
+        #main {
+            background-image: url("media/main.jpg");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            height: 500px;
+            opacity: 0.9;
+            text-align: center;
+            line-height: 300px;
+            font-size: 2em;
+            color: white;
+            text-shadow: 1px 1px lightblue;
+            text-decoration: underline;
+        }
+
+        section {
+            text-align: center;
+            height: 800px;
+            margin-bottom: 20px;
+        }
+
+        footer{
+            text-align: center;
+            height: 200px;
+        }
+
+
+        #mainmenu {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .menu {
+            width: 310px;
+            height: 300px;
+            display: inline-block;
+            margin-right: 5px;
+            border-radius: 5px;
+        }
+
+        #menu_1 {
+            background: #C8C8FF;
+        }
+
+        #menu_2 {
+            background: #FFD9E4;
+        }
+
+        #menu_3 {
+            background: #FAFABE;
+        }
+
+        #say {
+            display: inline-block;
+            width: 970px;
+            height: 200px;
+            border-radius: 5px;
+            background: #82F0F0;
+            margin-bottom: 20px;
+        }
+
+        #cheerup {
+            display: inline-block;
+            width: 970px;
+            height: 250px;
+            border-radius: 5px;
+            background: #9BFFDA;
+        }
+
+        .btn {
+            background-color: #7892c2;
+            border-radius: 28px;
+            border: 1px solid #4e6096;
+            display: inline-block;
+            cursor: pointer;
+            color: #ffffff;
+            font-family: Arial;
+            font-size: 15px;
+            font-weight: bold;
+            padding: 11px 22px;
+            text-decoration: none;
+            text-shadow: 0px 0px 0px #283966;
+        }
+
+        .btn:hover {
+            background-color: #476e9e;
+        }
+
+        .btn:active {
+            position: relative;
+            top: 1px;
+        }
+
+        #okbtn {
+            box-shadow: inset 0px 39px 0px -24px #e67a73;
+            background-color: #e4685d;
+            border-radius: 4px;
+            border: 1px solid #ffffff;
+            display: inline-block;
+            cursor: pointer;
+            color: #ffffff;
+            font-family: Arial;
+            font-size: 15px;
+            font-weight: bold;
+            padding: 1px 10px;
+            text-decoration: none;
+            text-shadow: 0px 1px 0px #b23e35;
+        }
+
+        #okbtn:hover {
+            background-color: #eb675e;
+        }
+
+        #okbtn:active {
+            position: relative;
+            top: 1px;
+        }
+
+
+        #foot {
+            display: inline-block;
+            width : 100%;
+            line-height: 200px;
+            background-color: #D7F1FA;
+            height: 200px;
+        }
+
+        #saytext {
+            font-size: 1.5em;
+        }
+
+        #board {
+            display: inline-block;
+            width: 250px;
+            height: 130px;
+        }
+
+        #cheertext,
+        #board {
+            font-weight: bold;
+            color: #FF7D6E;
+            background: #FFF;
+            border: solid 2px #FF7D6E;
+            border-radius: 5px;
+        }
+    </style>
+
+    <script>
+        var flink = 'https://www.youtube.com/results?search_query=%EC%88%8F%EB%B0%95%EC%8A%A4';
+        var mlink = 'https://www.youtube.com/watch?v=RhNJCS3hX6c';
+        var nlink = 'https://www.youtube.com/watch?v=ZQWrleq-NhQ';
+
+
+        function rand(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        var ws = ["너 자신을 알라", "악법도 법이다", "시간은 금이다", "삶이 있는 한 희망은 있다", "신은 용기있는자를 결코 버리지 않는다", "피할수 없으면 즐겨라",
+            "친구는 기쁨을 두배로 만들고 슬픔은 반으로 줄인다", "어리석은 사람은 자기 혓바닥을 억제하지 못한다", "일찍 일어나는 새가 벌레를 잡는다", "오늘 할 수 있는 일에 최선을 다해라",
+            "삶을 사는 데는 단 두가지 방법이 있다. 하나는 기적이 전혀 없다고 여기는 것이고 또 다른 하나는 모든 것이 기적이라고 여기는방식이다", "작은 기회로 부터 종종 위대한 업적이 시작된다", "도저히 손댈 수가 없는 곤란에 부딪혔다면 과감하게 그 속으로 뛰어들라 . 그리하면 불가능하다고 생각했던 일이 가능해진다",
+            "꿈을 계속 간직하고 있으면 반드시 실현할 때가 온다", "자신이 해야 할 일을 결정하는 사람은 세상에서 단 한 사람, 오직 나 자신뿐이다", "최고에 도달하려면 최저에서 시작하라"];
+
+        function randws() {
+            document.getElementById("saytext");
+            var a = rand(0, ws.length - 1);
+            saytext.innerHTML = ws[a];
+        }
+
+        function newPage(newlink) {
+            window.open(newlink);
+        }
+
+        function ok() {
+            document.getElementById("board");
+            document.getElementById("cheertext");
+            board.innerHTML = cheertext.value;
+            cheertext.value = "";
+        }
+
+    </script>
+</head>
+
+<body>
+    <header>
+        <div id="main">
+            <p>소소하게 편안함과 안정을 주는 나의 블로그</p>
+        </div>
+    </header>
+
+    <section>
+        <div id="mainmenu">
+            <div class="menu" id="menu_1">
+                <h3>재미있는 영상</h3>
+                <p>일상에 지쳐 기분전환이 필요할 때<br>
+                    재미있는 영상 어떠신가요?</p><br>
+                <input type="button" class="btn" value="바로가기" onclick="newPage(flink)">
+            </div>
+            <div class="menu" id="menu_2">
+                <h3>잔잔한 음악</h3>
+                <p>편안함과 안정감을 얻기 위해<br>
+                    잔잔한 음악 어떠신가요?</p><br>
+                <input type="button" class="btn" value="바로가기" onclick="newPage(mlink)">
+            </div>
+            <div class="menu" id="menu_3">
+                <h3>자연의 소리</h3>
+                <p>생각을 정리하고 스트레스 해소를 위해<br>
+                    자연의 소리 어떠신가요?</p><br>
+                <input type="button" class="btn" value="바로가기" onclick="newPage(nlink)">
+            </div>
+        </div>
+        <div id="say" onclick="randws()">
+            <h3>오늘의 명언</h3>
+            <p id="saytext">클릭해보세요!</p>
+        </div>
+        <div id="cheerup">
+            <h3>짧은 응원글을 남겨보세요!</h3>
+            <input type="text" id="cheertext">
+            <input type="button" id="okbtn" value="등록" onclick="ok()"><br>
+            <p id="board"></p>
+        </div>
+    </section>
+
+    <footer>
+        <div id="foot">
+            <p>웹프로그래밍 프로젝트 | 빅데이터전공&nbsp20175319&nbsp위시온 | wson1948@gmail.com</p>
+        </div>
+
+        <a style="display:scroll;position:fixed;bottom:10px;right:10px;" href="#" title="맨 위로"><img src="media/up.png"
+                width="40px" height="40px"></a>
+    </footer>
+</body>
+
+</html>
